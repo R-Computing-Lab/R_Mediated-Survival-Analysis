@@ -62,17 +62,17 @@ survival_model<-aalen_tv
 #med_var<-"W_ACT_74"
 indep_var<-"W_ACT_74"
 #indep_var<-"H_ACT_65"
-med_var<-"H_ACT_65"
+mediator<-"H_ACT_65"
 G=10^4
 robust=FALSE
 cum_time=median(val$W_End[val$W_Event==1],na.rm=TRUE)
 
-a<-CI_comp_test(glm_model=glm_model,survival_model=survival_model,mediator=med_var,indep_var=indep_var,G=10^4,cum_time=cum_time)
+a<-CI_comp_test(glm_model=glm_model,survival_model=survival_model,mediator=mediator,indep_var=indep_var,G=10^4,cum_time=cum_time,robust=FALSE)
 
 
 
 #########################
-CI_comp_test(glm_model=glm_model,survival_model=survival_model,med_var=med_var,indep_var=indep_var,G=10^4,cum_time=cum_time)
+CI_comp_test(glm_model=glm_model,survival_model=survival_model,mediator=mediator,indep_var=indep_var,G=10^4,cum_time=cum_time)
 
 
 
